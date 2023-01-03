@@ -13,12 +13,25 @@
         <input type="text" v-model="msg">
         <h3>{{msg}}</h3>
         <!-- 使用v-model binding "msg" 的值 -->
-        
+
         <h3>About Bambi 🐾</h3>
-        <ul style="list-style: none;">
-            <li></li>
-            <li></li>
-            <li></li>
+        <ul style="list-style: none;" v-model="bambi">
+            <li>
+                <label for="">Name: </label>
+                <input type="text" v-model="bambi.name">
+            </li>
+            <li>
+                <label for="">Age: </label>
+                <input type="text" v-model="bambi.age">
+            </li>
+            <li>
+                <label for="">Gender: </label>
+                <input type="text" v-model="bambi.gender">
+            </li>
+            <li>
+                <label for="">Breed: </label>
+                <input type="text" v-model="bambi.breed">
+            </li>
         </ul>
     </div>
     <footer></footer>
@@ -29,9 +42,10 @@
                 return {
                     msg: "Hello vue!",
                     bambi: {
+                        name: "Bambi", 
                         age: 6,
-                        gender: 'boy',
-                        breed: 'mix',
+                        gender: "boy",
+                        breed: "mix",
                     },
                 }
             }
