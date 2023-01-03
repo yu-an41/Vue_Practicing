@@ -21,37 +21,16 @@
                 <h3>Todos</h3>
                 <input type="text" class="form-control" autofocus autocomplete="off" placeholder="想要做甚麼?">
                 <ul class="list-group mt-3">
-                    <li class="list-group-item">
+                    <li v-for="todo in todos" class="list-group-item">
                         <div class="d-flex justify-content-between">
                             <div>
                                 <input class="form-check-input me-3" type="checkbox">
-                                <label class="form-check-label">作業 1</label>
+                                <label class="form-check-label">{{ todo.title }}</label>
                             </div>
                             <button class="badge bg-danger rounded-pill border-0">X</button>
                         </div>
                         <input type="text" class="form-control" hidden>
                     </li>
-                    <li class="list-group-item">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <input class="form-check-input me-3" type="checkbox">
-                                <label class="form-check-label">作業 2</label>
-                            </div>
-                            <button class="badge bg-danger rounded-pill border-0">X</button>
-                        </div>
-                        <input type="text" class="form-control" hidden>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <input class="form-check-input me-3" type="checkbox">
-                                <label class="form-check-label">作業 3</label>
-                            </div>
-                            <button class="badge bg-danger rounded-pill border-0">X</button>
-                        </div>
-                        <input type="text" class="form-control" hidden>
-                    </li>
-
                 </ul>
                 <div class="mt-3 d-flex justify-content-between">
                     <strong class=" me-3">尚有 ? 個工作未完成</strong>
@@ -87,6 +66,8 @@
             }
         })
         app.mount("#app")
+
+        
     </script>
 </body>
 
