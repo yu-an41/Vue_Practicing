@@ -28,7 +28,8 @@
                                 <input class="form-check-input me-3" type="checkbox">
                                 <label class="form-check-label">{{ i }} - {{ todo.title }}</label>
                             </div>
-                            <button class="badge bg-danger rounded-pill border-0">X</button>
+                            <button @click="removeTodo(i)"
+                            class="badge bg-danger rounded-pill border-0">X</button>
                         </div>
                         <input type="text" class="form-control" hidden>
                     </li>
@@ -70,8 +71,11 @@
                 editTodo() {
 
                 },
-                removeTodo() {
-                    
+                removeTodo(i) {
+                    // console.log("delete");
+                    // const i = this.todos.indexOf(todo)
+                    // 如果有傳陣列index 進來就直接刪不用先找位置
+                    this.todos.splice(i, 1)
                 }
             }
         })
